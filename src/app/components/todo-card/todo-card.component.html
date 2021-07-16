@@ -1,11 +1,21 @@
-<div class="card" *ngFor="let todo of todos">
-  <div class="card__header">
-    <h2 class="card__title">{{ todo.title }}</h2>
-    <div class="card__info card__info--green" *ngIf="todo.completed ; else elseCardInfo">&#10003; Completed</div>
-    <ng-template  #elseCardInfo>
+<div *ngIf="todos.length; else loader">
+  <div class="card" *ngFor="let todo of todos">
+    <div class="card__header">
+      <h2 class="card__title">{{ todo.id }}. {{ todo.title }}</h2>
+      <div
+        class="card__info card__info--green"
+        *ngIf="todo.completed; else incomplete"
+      >
+        &#10003; Completed
+      </div>
+      <ng-template #incomplete>
         <div class="card__info card__info--red">&#x2715; Incomplete</div>
-    </ng-template>
+      </ng-template>
+    </div>
+    <!-- <p class="card__description">{{ todo.description }}</p>
+  <div class="card__date">Date: {{ todo.dueDate }}</div> -->
   </div>
-  <p class="card__description">{{ todo.description }}</p>
-  <div class="card__date">Date: {{ todo.dueDate }}</div>
 </div>
+<ng-template #loader>
+  <div class="loader"></div>
+</ng-template>

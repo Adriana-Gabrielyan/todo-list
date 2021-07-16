@@ -25,6 +25,7 @@
   color: #435462;
   font-size: 23px;
   margin-bottom: 10px;
+  text-transform: capitalize;
 }
 
 .card__description {

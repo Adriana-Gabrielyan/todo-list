@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from '../../http.service';
 
 @Component({
   selector: 'app-todo-card',
@@ -6,38 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./todo-card.component.css'],
 })
 export class TodoCardComponent implements OnInit {
-  todos = [
-    {
-      title: 'Eating',
-      description:
-        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia id velit  doloremque?',
-      dueDate: '15/07/2021 10:00 AM',
-      completed: true,
-    },
-    {
-      title: 'Codding',
-      description:
-        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia id velit  doloremque?',
-      dueDate: '15/07/2021 11:00 AM',
-      completed: true,
-    },
-    {
-      title: 'Go for a Walk',
-      description:
-        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia id velit  doloremque?',
-      dueDate: '15/07/2021 08:00 PM',
-      completed: false,
-    },
-    {
-      title: 'Sleep',
-      description:
-        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia id velit  doloremque?',
-      dueDate: '15/07/2021 11:00 PM',
-      completed: false,
-    },
-  ];
+  todos: any[];
 
-  constructor() {}
+  constructor(private _http: HttpService) {
+    this.todos = [];
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this._http.getAPIData().subscribe((data) => {
+      this.todos = data;
+    });
+  }
+  
 }
