@@ -9,6 +9,6 @@ export class HttpService {
   constructor(private http: HttpClient) { }
 
   getAPIData(){
-    return this.http.get<any>('https://jsonplaceholder.typicode.com/todos/');
+    return this.http.get<any>('https://60f340396d44f30017788915.mockapi.io/api/v1/tasks');
   }
 }
