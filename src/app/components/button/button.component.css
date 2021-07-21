@@ -1,0 +1,19 @@
+.btn {
+  display: inline-block;
+  background-color: #475c62;
+  padding: 10px 25px;
+  border: 0;
+  border-radius: 5px;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+.btn--primary {
+  background-color: #137b95;
+}
+
+.btn--red {
+  background-color: #c23015;
+}
+
+

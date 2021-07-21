@@ -1,0 +1,11 @@
+<div class="form__group">
+  <label class="form__label">{{ label }}</label>
+  <input
+    class="form__input"
+    type="{{ type }}"
+    placeholder="{{ placeholder }}"
+    name="{{ name }}"
+    [(ngModel)]="inputModel"
+    (ngModelChange)="changeInputModel($event)"
+  />
+</div>

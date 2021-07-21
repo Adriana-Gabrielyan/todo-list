@@ -1,0 +1,29 @@
+.form__group {
+  margin-bottom: 15px;
+}
+
+.form__label {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  color: #1e7b95;
+  font-weight: bold;
+}
+
+.form__input {
+  width: 100%;
+  height: 45px;
+  padding: 5px 25px;
+  border-radius: 5px;
+  border: 1px solid #aad5e0;
+  font-size: 16px;
+}
+.form__input:focus {
+  box-shadow: 1px 1px 10px #299bb887;
+  outline: none;
+}
+
+.form__error{
+  color: red;
+  display: none;
+}

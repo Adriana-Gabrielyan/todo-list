@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import {Todo} from '../../Todo'
 
 @Component({
   selector: 'app-todo-card',
@@ -7,10 +8,15 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 
 export class TodoCardComponent implements OnInit {
-  @Input() todos: any[] = [];
-
+  @Input() todo!: Todo;
+  @Output() onDeleteTodo: EventEmitter<Task> = new EventEmitter;
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
   
+  }
+
+  onDelete(todo:any){
+    this.onDeleteTodo.emit(todo)
+  }
 }

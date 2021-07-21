@@ -1,0 +1,36 @@
+<div class="text-right">
+  <app-button
+    text="Add"
+    color="primary"
+    (btnClick)="showAddTodo()"
+  ></app-button>
+</div>
+<div class="success-message" *ngIf="showSuccessMessage">
+  Your new Card is added
+</div>
+<div class="form-bg"  *ngIf="isAddTodoOpen">
+  <form action="" class="form" (ngSubmit)="onSubmit()">
+    <app-input label="Title" name="title" [(inputModel)]="title"></app-input>
+    <app-input
+      label="Description"
+      name="description"
+      [(inputModel)]="description"
+    ></app-input>
+    <app-input label="Status" name="status" [(inputModel)]="status"></app-input>
+    <app-input
+      label="Due"
+      name="due"
+      [(inputModel)]="due"
+      type="date"
+    ></app-input>
+
+    <div class="button__group">
+      <app-button
+        text="Cancel"
+        type="button"
+        (btnClick)="removeAddTodoCard()"
+      ></app-button>
+      <app-button text="Submit" color="primary" type="sumbit"></app-button>
+    </div>
+  </form>
+</div>

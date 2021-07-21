@@ -1,16 +1,16 @@
-<div *ngIf="todos.length; else loader">
-  <div class="card" *ngFor="let todo of todos">
-    <div class="card__header">
-      <h2 class="card__title">{{ todo.title }}</h2>
-      <div class="card__info card__info--green">
-        <b>Status</b>: {{ todo.status }}
-      </div>
+<div class="card">
+  <div class="card__header">
+    <h2 class="card__title">{{ todo.title }}</h2>
+    <div class="card__info card__info--green">
+      <b>Status</b>: {{ todo.status }}
     </div>
-    <p class="card__description">{{ todo.description }}</p>
-    <div class="card__date"><b>Created</b>: {{ todo.created }}</div>
-    <div class="card__date"><b>Due</b>: {{ todo.due }}</div>
+  </div>
+  <p class="card__description">{{ todo.description }}</p>
+  <div class="card__footer">
+    <app-button text="Delete" color="red" (click)="onDelete(todo)"></app-button>
+    <div>
+      <div class="card__date"><b>Created</b>: {{ todo.created }}</div>
+      <div class="card__date"><b>Due</b>: {{ todo.due }}</div>
+    </div>
   </div>
 </div>
-<ng-template #loader>
-  <div class="loader"></div>
-</ng-template>

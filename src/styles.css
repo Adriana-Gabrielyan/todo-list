@@ -34,7 +34,9 @@ h1 {
 .container__title {
   color: #299bb8;
 }
-
+.text-right {
+  text-align: right;
+}
 
 .loader {
   width: 50px;
@@ -44,10 +46,31 @@ h1 {
   border-color: #299bb8 #299bb8 #299bb8 transparent;
   animation: loader infinite 2s;
   transform: rotate(0deg);
-  margin:50px  auto;
+  margin: 50px auto;
+}
+.button__group .btn {
+  margin-left: 10px;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-@keyframes loader{
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    top: 20px;
+  }
+  100% {
+    opacity: 1;
+    top: 0;
+  }
+}
+@keyframes loader {
   0% {
     transform: rotate(0deg);
   }

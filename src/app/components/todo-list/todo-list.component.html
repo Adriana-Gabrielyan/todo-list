@@ -1,0 +1,7 @@
+<app-add-todo (onAddTodo)="addTodo($event)"></app-add-todo>
+<div *ngIf="todos.length; else loader">
+  <app-todo-card *ngFor="let todo of todos" [todo]="todo" (onDeleteTodo)="deleteTodo(todo)"></app-todo-card>
+</div>
+<ng-template #loader>
+  <div class="loader"></div>
+</ng-template>
