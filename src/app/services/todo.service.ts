@@ -13,8 +13,8 @@ const httpOptions = {
   providedIn: 'root',
 })
 export class TodoService {
-  private apiUrl = 'http://localhost:3000/todos';
-  // private apiUrl = 'https://60f340396d44f30017788915.mockapi.io/api/v1/tasks';
+  // private apiUrl = 'http://localhost:3000/todos';
+  private apiUrl = 'https://60f340396d44f30017788915.mockapi.io/api/v1/tasks';
 
   constructor(private http: HttpClient) {}
 
