@@ -57,6 +57,6 @@ export class AddTodoComponent implements OnInit {
 
     setTimeout(() => {
       this.showSuccessMessage = false;
-    }, 2000);
+    }, 2500);
   }
 }
