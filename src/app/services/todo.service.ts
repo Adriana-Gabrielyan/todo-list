@@ -17,7 +17,7 @@ export class TodoService {
   private apiUrl = 'https://60f340396d44f30017788915.mockapi.io/api/v1/tasks';
 
   constructor(private http: HttpClient) {}
-
+ 
   getAPIData(): Observable<Todo[]> {
     return this.http.get<Todo[]>(this.apiUrl);
   }

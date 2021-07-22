@@ -14,9 +14,9 @@ export class TodoListComponent implements OnInit {
 
   ngOnInit(): void {
     this._http.getAPIData().subscribe((data) => {
-      this.todos = data.sort((a,b) => a.created > b.created ? -1 : 1);
+      this.todos = data.sort((a, b) => (a.created > b.created ? -1 : 1));
     });
-  }
+  }  
   deleteTodo(todo: Todo) {
     this._http
       .deleteTodo(todo)
@@ -25,7 +25,9 @@ export class TodoListComponent implements OnInit {
       );
   }
 
-  addTodo(todo: Todo) {
-    this._http.addTodo(todo).subscribe((task) => this.todos.unshift(task));
+  addTodo(todo: Todo) { 
+    this._http.addTodo(todo).subscribe((task) => {
+      this.todos.unshift(task);
+    });
   }
 }
