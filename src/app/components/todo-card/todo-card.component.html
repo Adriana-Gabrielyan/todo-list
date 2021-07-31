@@ -9,8 +9,8 @@
   <div class="card__footer">
     <app-button text="Delete" color="red" (click)="onDelete(todo)"></app-button>
     <div>
-      <div class="card__date"><b>Created</b>: {{ todo.created }}</div>
-      <div class="card__date"><b>Due</b>: {{ todo.due }}</div>
+      <div class="card__date"><b>Created</b>: {{ todo.created | date }}</div>
+      <div class="card__date"><b>Due</b>: {{ todo.due | date }}</div>
     </div>
   </div>
 </div>
